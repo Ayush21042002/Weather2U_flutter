@@ -35,31 +35,36 @@ class CurrentWeather extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            SizedBox(height: 10,),
             Text(
               condition!.toUpperCase(),
               style: const TextStyle(color: Colors.white70),
             ),
+            SizedBox(height: 10,),
             Text(
-              'Temperature: ${temp!.toStringAsPrecision(2)} Celsius',
+              'Temperature: ${temp!.toStringAsPrecision(2)} \u2103',
               style: const TextStyle(color: Colors.white),
             ),
+            SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  'Max: ${maxTemp!.toStringAsPrecision(2)} Celsius',
+                  'Max: ${maxTemp!.toStringAsPrecision(2)} \u2103',
                   style: const TextStyle(color: Colors.white70),
                 ),
                 Text(
-                  'Min: ${minTemp!.toStringAsPrecision(2)} Celsius',
+                  'Min: ${minTemp!.toStringAsPrecision(2)} \u2103',
                   style: const TextStyle(color: Colors.white70),
                 ),
               ],
             ),
+            SizedBox(height: 10,),
             Text(
-              'Wind Speed $windSpeed',
+              'Wind Speed $windSpeed m/s',
               style: const TextStyle(color: Colors.white),
             ),
+            SizedBox(height: 10,),
           ],
         ),
       ),

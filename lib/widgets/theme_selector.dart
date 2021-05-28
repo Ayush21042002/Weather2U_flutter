@@ -20,13 +20,16 @@ class ThemeSelector extends StatelessWidget {
         children: [
           const Card(
             color: Colors.transparent,
-            child: Text(
-              'Choose Theme',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontFamily: 'Pattaya'),
+            child: Padding(
+              padding: EdgeInsets.all(6.0),
+              child: Text(
+                'Choose Theme',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontFamily: 'Pattaya'),
+              ),
             ),
           ),
           Expanded(

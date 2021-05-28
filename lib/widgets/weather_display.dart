@@ -41,21 +41,31 @@ class WeatherDisplay extends StatelessWidget {
       future: queryWeather(context),
       builder: (ctx, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
-            child: Text(
-              'Weather Data Loading......',
-              style: TextStyle(
-                color: Colors.white,
-              ),
+          return Center(
+            child: Column(
+              children: [
+                CircularProgressIndicator(
+                  valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+                Text(
+                  'Weather Data Loading......',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
           );
         }
         if (snapshot.hasError || !snapshot.hasData) {
           return const Center(
-            child: Text(
-              'Restart The App or Enter correct city name',
-              style: TextStyle(
-                color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Text(
+                'Restart The App or Enter correct city name',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
           );

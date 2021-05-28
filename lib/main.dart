@@ -6,8 +6,16 @@ import 'package:weather2u/utils/color_scheme.dart';
 import 'package:weather2u/widgets/theme_selector.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather2u/widgets/weather_display.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -96,6 +104,9 @@ class _MyAppState extends State<MyApp> {
       },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          accentColor: Colors.white,
+        ),
         home: FutureBuilder(
             future: _determinePosition(),
             builder: (ctx, snapshot) {
